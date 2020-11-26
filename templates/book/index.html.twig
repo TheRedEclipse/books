@@ -1,0 +1,28 @@
+{% extends('base.html.twig') %}
+
+{% block body %}
+    <table>
+        <tbody>
+        <th>Книга</th>
+        <th>Автор</th>
+        <th>Год</th>
+
+        {% for book in books %}
+            <tr>
+                <td>
+                    {{ book.name }}
+                </td>
+                <td>
+                    {{ book.author }}
+                </td>
+                <td>
+                    {{ book.year|date("m.d.Y") }}
+                </td>
+                <td>
+                    <a href="{{ path('book_update', {id: book.id}) }}">Изменить</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
