@@ -36,7 +36,7 @@ class BookController extends AbstractController
      */
     public function create(Request $request)
     {
-        // Create new bookkkkzzzzz
+        // Create new book
         $book = new Book();
 
         $form = $this->createForm(BookType::class, $book);
